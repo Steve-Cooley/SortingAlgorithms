@@ -1,6 +1,5 @@
 import java.util.*;
 import java.util.stream.Collectors;
-//import com.google.common.primitives.Ints;
 
 public class Sorters {
 
@@ -26,11 +25,13 @@ public class Sorters {
     }
 
 
+    // ************* sorters and tests ***********************
+
     // merge sort O(nlogn)
     // divide recursively til you get to one, which is inherently sorted. Then climb
     // back up that
     // tree, merging as you go.
-    public static int[] mergeSort(int[] inpArray) {
+    public static int[  ] mergeSort(int[] inpArray) {
         return inpArray;
     }
 
@@ -55,7 +56,7 @@ public class Sorters {
             whileLoops++;
 //            len--; // This might be fun to see what kind of speedup this would produce
         }
-        System.out.println(String.format("while loops: %d for loops %d: ", whileLoops, forLoops));
+//        System.out.println(String.format("while loops: %d for loops %d: ", whileLoops, forLoops));
         return inpArray;
     }
 
@@ -63,12 +64,32 @@ public class Sorters {
         System.out.println("These are the results of bubbleSort:");
 //        int[] testArray = {2, 4, 6, 1, 3, 5};
         int[] testArray = genRandArray(50, 5000);
-        int len = testArray.length;
-        //System.out.println(String.format("the length of the test array is: %d", len));
         int[] bubbleResults = bubbleSort(testArray);
         for (int num : bubbleResults) {
             System.out.println(num);
         }
+    }
+
+    public static void testBubbleSort(int[] testArray) {
+        int len = testArray.length;
+        System.out.println("These are the results of bubbleSort:");
+        System.out.println(String.format("Test length = %d", len));
+        long start1 = System.nanoTime();
+        int[] bubbleResults = bubbleSort(testArray);
+        long end1 = System.nanoTime();
+        System.out.println("elapsed time in nanoseconds: " + (end1-start1));
+//        for (int num : bubbleResults) {
+//            System.out.println(num);
+//        }
+    }
+
+    public static void testBubbleSort(int[] testArray, boolean compact) {
+        int len = testArray.length;
+        long start1 = System.nanoTime();
+        int[] bubbleResults = bubbleSort(testArray);
+        long end1 = System.nanoTime();
+        System.out.println("bubbleSort:    " + (end1-start1));
+
     }
 
     // shellsort (my favorite)
@@ -101,6 +122,7 @@ public class Sorters {
             System.out.println(i);
         }
     }
+
 
     // selection sort
 
@@ -150,6 +172,26 @@ public class Sorters {
         }
     }
 
+    private static void testInsertionSort(int[] testArray) {
+        // This line actually sorts the testArray in place, which is not what I
+        // intended. I don't really understand why it's doing that or how to stop it.
+        // Pass by value is the reason. You have to copy the array b/c it's an object.
+        long start1 = System.nanoTime();
+        int[] results = insertionSort(testArray);
+        long end1 = System.nanoTime();
+        System.out.println("Printing results for insertionSort");
+        System.out.println("elapsed time in nanoseconds: " + (end1-start1));
+    }
+
+    private static void testInsertionSort(int[] testArray, boolean compact) {
+        // This line actually sorts the testArray in place, which is not what I
+        // intended. I don't really understand why it's doing that or how to stop it.
+        long start1 = System.nanoTime();
+        int[] results = insertionSort(testArray);
+        long end1 = System.nanoTime();
+        System.out.println("insertionSort: " + (end1-start1));
+    }
+
     public static void test() {
         System.out.println("Hello World! ");
         int[] testArray = {1, 2, 3};
@@ -157,12 +199,13 @@ public class Sorters {
     }
 
     public static void main(String[] args) {
-        // test();
-//        testInsertionSort();
+        int[] randomArray = genRandArray(100_000, 1000);
+        testInsertionSort(Arrays.copyOf(randomArray, randomArray.length), true);
         // test Bogosort
 //        testBogosort();
         // test bubbleSort
-        testBubbleSort();
+//        randomArray = genRandArray(1000, 1000);
+        testBubbleSort(Arrays.copyOf(randomArray, randomArray.length), true);
 //        testGenRandomArray();
     }
 
