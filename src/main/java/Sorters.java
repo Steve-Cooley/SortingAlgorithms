@@ -60,7 +60,6 @@ public class Sorters {
             ++j;
             ++k;
         }
-
         return merged;
     }
 
@@ -214,12 +213,10 @@ public class Sorters {
     // locations, then moving them to the beginning and end (figure it out). Lots of
     // comparisons, not so many writes. This will shorten the search on both ends of
     // the array each iteration through, meaning that each search will get
-    // progressively faster.
+    // progressively faster. This is similar to selection sort, but double ended.
 
     // Insertion sort
     public static int[] insertionSort(int[] inputArray) {
-        // For some reason, I couldn't get this to run with an inner "for-loop" with
-        // a break rather than an inner while loop.
         if (inputArray.length < 2) {
             return inputArray;
         }
