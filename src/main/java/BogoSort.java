@@ -24,7 +24,7 @@ public class BogoSort {
         return ul.stream().mapToInt(i -> i).toArray();
     }
 
-    private static void testBogosort() {
+    static void testBogosort() {
         int[] testArray = { 2, 4, 6, 1, 3, 5 };
         int[] presorted = { 1, 2, 3, 4, 5, 6 };
         int[] bogoresults = bogosort(testArray, presorted);

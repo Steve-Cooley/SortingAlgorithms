@@ -75,7 +75,7 @@ public class MergeSort {
         // return inpArray;
     }
 
-    static void testMergeSort(int[] testArray) {
+    static void mergeSortTimer(int[] testArray) {
         // int[] testArray = {2, 4, 6, 1, 3, 5};
         long start1 = System.nanoTime();
         testArray = mergeSort(testArray);

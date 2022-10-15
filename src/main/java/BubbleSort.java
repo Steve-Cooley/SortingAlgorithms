@@ -49,7 +49,7 @@ public class BubbleSort {
         // }
     }
 
-    public static void testBubbleSort(int[] testArray, boolean compact) {
+    public static void bubbleSortTimer(int[] testArray, boolean compact) {
         int len = testArray.length;
         long start1 = System.nanoTime();
         int[] bubbleResults = bubbleSort(testArray);
