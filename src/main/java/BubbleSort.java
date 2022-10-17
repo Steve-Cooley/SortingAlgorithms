@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class BubbleSort {
 
     // bubble sort
@@ -14,7 +16,6 @@ public class BubbleSort {
                     int temp = inpArray[i];
                     inpArray[i] = inpArray[i + 1];
                     inpArray[i + 1] = temp;
-                    // System.out.println(String.format("swapped index %d with %d.", i, i + 1));
                 }
                 ++forLoops;
             }
@@ -26,35 +27,15 @@ public class BubbleSort {
         return inpArray;
     }
 
-    public static void testBubbleSort() {
-        System.out.println("These are the results of bubbleSort:");
-        // int[] testArray = {2, 4, 6, 1, 3, 5};
-        int[] testArray = Utils.genRandArray(50, 5000);
-        int[] bubbleResults = bubbleSort(testArray);
-        for (int num : bubbleResults) {
-            System.out.println(num);
-        }
-    }
-
-    public static void testBubbleSort(int[] testArray) {
-        int len = testArray.length;
-        System.out.println("These are the results of bubbleSort:");
-        System.out.println(String.format("Test length = %d", len));
+    public static void timeAndVerify(int[] control, int[] inputArray) {
+        int len = inputArray.length;
         long start1 = System.nanoTime();
-        int[] bubbleResults = bubbleSort(testArray);
+        int[] bubbleResults = bubbleSort(inputArray);
         long end1 = System.nanoTime();
-        System.out.println("elapsed time in nanoseconds: " + (end1 - start1));
-        // for (int num : bubbleResults) {
-        // System.out.println(num);
-        // }
-    }
-
-    public static void bubbleSortTimer(int[] testArray, boolean compact) {
-        int len = testArray.length;
-        long start1 = System.nanoTime();
-        int[] bubbleResults = bubbleSort(testArray);
-        long end1 = System.nanoTime();
-        System.out.println("bubbleSort:    " + (end1 - start1));
+        boolean isAccurate = Arrays.equals(inputArray, control);
+        System.out.println("bubbleSort:    "
+                + (end1 - start1) + " accurate: "
+                + isAccurate );
     
     }
     

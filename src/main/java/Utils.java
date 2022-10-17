@@ -20,5 +20,43 @@ public class Utils {
             System.out.println(num);
         }
     }
-    
+
+    /**
+     * Takes two already sorted arrays, combines them preserving
+     * that order, and returns the results. Will not work with
+     * unsorted arrays. Written for mergeSort, but may be used
+     * in elsewhere.
+     *
+     * @param presortedLeft must be sorted
+     * @param presortedRight must be sorted
+     * @return merged array
+     */
+    public static int[] merge2SortedArrays(int[] presortedLeft, int[] presortedRight) {
+        int leftLen = presortedLeft.length;
+        int rightlen = presortedRight.length;
+        int[] merged = new int[leftLen + rightlen];
+        int i = 0, j = 0, k = 0;
+        while (i < leftLen && j < rightlen) {
+            if (presortedLeft[i] <= presortedRight[j]) {
+                merged[k] = presortedLeft[i];
+                ++i;
+                ++k;
+            } else {
+                merged[k] = presortedRight[j];
+                ++j;
+                ++k;
+            }
+        }
+        while (i < leftLen) {
+            merged[k] = presortedLeft[i];
+            ++i;
+            ++k;
+        }
+        while (j < rightlen) {
+            merged[k] = presortedRight[j];
+            ++j;
+            ++k;
+        }
+        return merged;
+    }
 }

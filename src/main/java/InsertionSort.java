@@ -34,7 +34,7 @@ public class InsertionSort {
         long start1 = System.nanoTime();
         int[] results = insertionSort(inputArray);
         long end1 = System.nanoTime();
-        boolean isAccurate = Arrays.equals(inputArray, control);
+        boolean isAccurate = Arrays.equals(results, control);
         System.out.println("insertionSort: "
                 + (end1 - start1)
                 + " accurate: "

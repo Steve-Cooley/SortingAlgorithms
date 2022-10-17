@@ -18,17 +18,6 @@ public class Sorters {
      * progressively faster. This is similar to selection sort, but double ended.
      */
 
-    /*
-     * Steve Sort 2:
-     * I've noticed that insertion sort is very fast for small arrays
-     * (~100). What if I used a recursive algorithm like mergeSort
-     * which breaks down the array into smaller bits until the array
-     * size is about 100 then switch to insertion sort? This should
-     * combine the strength of merge sort for large arrays, and the
-     * speed of insertion for short arrays. 100 might not be the optimal
-     * switch, so it might be worth experimenting with that number.
-     */
-
     private static void controlTimer(int[] control) {
         long controlStart = System.nanoTime();
         Arrays.sort(control);
@@ -37,24 +26,25 @@ public class Sorters {
     }
 
     public static void main(String[] args) {
-        int len = 100;
+        int len = 10_000_000;
         int intMax = 1_000;
         int[] randomArray = Utils.genRandArray(len, intMax);
         int[] control = Arrays.copyOf(randomArray, len);
         controlTimer(control);
 
-        InsertionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+//        InsertionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
         // test Bogosort (don't use this method if values > 10 or so)
         // BogoSort.testBogosort();
 
         // test bubbleSort
-        BubbleSort.bubbleSortTimer(Arrays.copyOf(randomArray, len), true);
+//        BubbleSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
         // test mergeSorted
-        // testMergeSorted();
-        MergeSort.mergeSortTimer(Arrays.copyOf(randomArray, len));
+        MergeSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
-        SelectionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+//        SelectionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+
+        SteveSort2.timeAndVerify(control, Arrays.copyOf(randomArray, len));
     }
 }
