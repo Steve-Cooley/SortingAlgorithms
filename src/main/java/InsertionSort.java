@@ -4,9 +4,9 @@ public class InsertionSort {
 
     /**
      * Insertion sort
-     * 
-     * @param inputArray
-     * @return
+     *
+     * @param inputArray An array to be sorted.
+     * @return sorted array
      */
     public static int[] insertionSort(int[] inputArray) {
         int length = inputArray.length;

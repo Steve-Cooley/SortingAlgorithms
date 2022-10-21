@@ -33,7 +33,7 @@ public class SteveSort2 {
         if (len < 101) {
             return InsertionSort.insertionSort(inpArray);
         }
-        // create the two halves to be recursivley sorted
+        // create the two halves to be recursively sorted
         int midI = len/2;
         int[] left = new int[midI];
         int[] right = new int[len-midI];

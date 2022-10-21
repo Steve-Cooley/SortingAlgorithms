@@ -41,10 +41,11 @@ public class Sorters {
 //        BubbleSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
         // test mergeSorted
-        MergeSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+//        MergeSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
 //        SelectionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
-        SteveSort2.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+//        SteveSort2.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+        ShellSort.testSedgwick();
     }
 }
