@@ -7,7 +7,7 @@ public class SteveSort2 {
      * (~100). What if I used a recursive algorithm like mergeSort
      * which breaks down the array into smaller bits until the array
      * size is about 100 then switch to insertion sort? This should
-     * combine the strength of merge sort for large arrays, and the
+     * combine the strength of merge sort for large arrays, and  the
      * speed of insertion for short arrays. 100 might not be the optimal
      * switch, so it might be worth experimenting with that number.
      * I think 50 is closer to optimum.

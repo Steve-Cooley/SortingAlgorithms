@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class SelectionSort {
 
     // selection sort
-    public static int[] selectionSort(int[] inputArray) {
+    public static int[ ] selectionSort(int[] inputArray) {
         int len = inputArray.length;
         int min_idx;
         int temp;
@@ -29,6 +29,6 @@ public class SelectionSort {
         System.out.println("SelectionSort: "
                 + (end1 - start1)
                 + " accurate: "
-                + isAccurate);
+                + isAccurate) ;
     }
 }

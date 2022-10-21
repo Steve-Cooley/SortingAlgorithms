@@ -30,7 +30,7 @@ public class MergeSort {
             left[i] = inpArray[i];
         }
         // populate right half  0 1 2 3 4
-        for (int i = 0; i < (len-midI); ++i){
+        for (int i = 0; i < (len-midI); ++i) {
             right[i] = inpArray[i+midI];
         }
         return Utils.merge2SortedArrays(mergeSort(left), mergeSort(right));

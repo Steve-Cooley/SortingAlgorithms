@@ -9,7 +9,7 @@ public class Sorters {
     /*
      * Steve sort (turns out this is called "double selection sort" and saves about
      * 25% vs selection sort)
-     * Just an idea I had to iterate through the array, identifying the biggest and
+     * Just an idea I had to iterate  through the array, identifying the biggest and
      * smallest values, storing them in a couple of external arrays (or four
      * variables) with their values and index
      * locations, then moving them to the beginning and end (figure it out). Lots of

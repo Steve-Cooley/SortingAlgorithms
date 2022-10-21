@@ -13,7 +13,7 @@ public class Utils {
         return numberList.stream().mapToInt(i -> i).toArray();
     }
 
-    public static void testGenRandomArray() {
+    public static void testGenRandomArray( ) {
         System.out.println("Testing genrandarray");
         int[] test = genRandArray(6, 6);
         for (int num : test) {

@@ -29,7 +29,7 @@ public class BubbleSort {
 
     public static void timeAndVerify(int[] control, int[] inputArray) {
         int len = inputArray.length;
-        long start1 = System.nanoTime();
+        long start1 = System.nanoTime( );
         int[] bubbleResults = bubbleSort(inputArray);
         long end1 = System.nanoTime();
         boolean isAccurate = Arrays.equals(inputArray, control);

@@ -37,6 +37,7 @@ public class ShellSort {
         // The following line required me to use maven and apache commons for the first time.
         Integer[] wArr = outpl.toArray(new Integer[outpl.size()]);
         return ArrayUtils.toPrimitive(wArr);
+
     }
 
     public static void testSedgwick() {

@@ -7,7 +7,7 @@ public class BogoSort {
 
     // bogosort The preSortedArray var is there to have something to test against to
     // see if it is sorted or not. int to Integer, array to List conversions
-    // are necessary for shuffling. I'm sure this has some overhead, but should
+    // are necessary for shuffling. I'm sure this has some overhead,  but should
     // be nothing compared to this awful algorithm.
     public static int[] bogosort(int[] inpArray, int[] preSorted) {
         // convert to Integer List

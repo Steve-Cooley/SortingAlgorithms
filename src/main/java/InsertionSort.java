@@ -13,7 +13,7 @@ public class InsertionSort {
         if (length < 2) {
             return inputArray;
         }
-        // outer loop (i) 1.) starts at inputArray[1], copies that value into temp,
+        // outer loop (i) 1.) starts at inputArray[1],  copies that value into temp,
         // executes inner loop, repeats until it reaches end of inputArray.
         for (int i = 1; i < length; ++i) {
             int temp = inputArray[i];
