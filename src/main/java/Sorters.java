@@ -22,12 +22,12 @@ public class Sorters {
         long controlStart = System.nanoTime();
         Arrays.sort(control);
         long controlStop = System.nanoTime();
-        System.out.println("control:       " + (controlStop - controlStart));
+        System.out.println("timsort:       " + (controlStop - controlStart));
     }
 
     public static void main(String[] args) {
-        int len = 10_000_000;
-        int intMax = 1_000;
+        int len = 500_000;
+        int intMax = 1_000_000;
         int[] randomArray = Utils.genRandArray(len, intMax);
         int[] control = Arrays.copyOf(randomArray, len);
         controlTimer(control);
@@ -41,11 +41,13 @@ public class Sorters {
 //        BubbleSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
         // test mergeSorted
-//        MergeSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
 //        SelectionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 
-//        SteveSort2.timeAndVerify(control, Arrays.copyOf(randomArray, len));
-        ShellSort.testSedgwick();
+        SteveSort2.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+        MergeSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+//        ShellSort.testSedgwick();
+        ShellSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+        InsertionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
     }
 }

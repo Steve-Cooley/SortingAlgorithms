@@ -10,7 +10,8 @@ public class SteveSort2 {
      * combine the strength of merge sort for large arrays, and  the
      * speed of insertion for short arrays. 100 might not be the optimal
      * switch, so it might be worth experimenting with that number.
-     * I think 50 is closer to optimum.
+     * I think 50 is closer to optimum. (further testing with the completed
+     * algorithm seems to favor ~100)
      *
      * Okay, so this scales well, meaning it works better the larger
      * the array.  It's still slow compared to the
