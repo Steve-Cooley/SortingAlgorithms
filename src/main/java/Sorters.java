@@ -26,8 +26,8 @@ public class Sorters {
     }
 
     public static void main(String[] args) {
-        int len = 500_000;
-        int intMax = 1_000_000;
+        int len = 250_000_000;
+        int intMax = 100;
         int[] randomArray = Utils.genRandArray(len, intMax);
         int[] control = Arrays.copyOf(randomArray, len);
         controlTimer(control);
@@ -48,6 +48,6 @@ public class Sorters {
         MergeSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
 //        ShellSort.testSedgwick();
         ShellSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
-        InsertionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
+//        InsertionSort.timeAndVerify(control, Arrays.copyOf(randomArray, len));
     }
 }

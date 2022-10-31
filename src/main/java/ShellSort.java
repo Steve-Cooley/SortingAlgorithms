@@ -54,7 +54,7 @@ public class ShellSort {
             ++k;
         }
         //The formula given at wikipedia never returns a 1, so I'm doing so manually
-        //outpl.add(1);
+        outpl.add(1);
         // The following line required me to use maven and apache commons for the first time.
         // now that I've done all that, I think I should have just returned an arraylist. XD
         Integer[] wArr = outpl.toArray(new Integer[outpl.size()]);
@@ -72,25 +72,20 @@ public class ShellSort {
 
     public static int[] shellSort(int[] inputArray) {
         int len = inputArray.length;
-        int[] seq = sedgwickSequence(len);
+        int[] gaps = sedgwickSequence(len);
         // for each gap
-        for (int gap: seq){
-            int lowI = 0;
-            int highI = lowI + gap;
-            // while gap is in range
-            while (highI < len) {
-                if (inputArray[lowI] > inputArray[highI]) {
-                    // swap low with high
-                    int temp = inputArray[lowI];
-                    inputArray[lowI] = inputArray[highI];
-                    inputArray[highI] = temp;
+        for (int gap : gaps){
+            for (int i = gap; i < len; ++i) {
+                int temp = inputArray[i];
+                int j = i;
+                while (j >= gap && inputArray[j - gap] > temp) {
+                    inputArray[j] = inputArray[j-gap];
+                    j -= gap;
                 }
-                ++lowI;
-                ++highI;
+                inputArray[j] = temp;
             }
         }
-        // Insertion sort should always run for the final iteration
-        return InsertionSort.insertionSort(inputArray);
+        return inputArray;
     }
 
 
