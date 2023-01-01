@@ -25,7 +25,7 @@ public class Utils {
      * Takes two already sorted arrays, combines them preserving
      * that order, and returns the results. Will not work with
      * unsorted arrays. Written for mergeSort, but may be used
-     * in elsewhere.
+     * elsewhere.
      *
      * @param presortedLeft must be sorted
      * @param presortedRight must be sorted
@@ -35,27 +35,27 @@ public class Utils {
         int leftLen = presortedLeft.length;
         int rightlen = presortedRight.length;
         int[] merged = new int[leftLen + rightlen];
-        int i = 0, j = 0, k = 0;
-        while (i < leftLen && j < rightlen) {
-            if (presortedLeft[i] <= presortedRight[j]) {
-                merged[k] = presortedLeft[i];
-                ++i;
-                ++k;
+        int left_i = 0, right_i = 0, merged_i = 0;
+        while (left_i < leftLen && right_i < rightlen) {
+            if (presortedLeft[left_i] <= presortedRight[right_i]) {
+                merged[merged_i] = presortedLeft[left_i];
+                ++left_i;
+                ++merged_i;
             } else {
-                merged[k] = presortedRight[j];
-                ++j;
-                ++k;
+                merged[merged_i] = presortedRight[right_i];
+                ++right_i;
+                ++merged_i;
             }
         }
-        while (i < leftLen) {
-            merged[k] = presortedLeft[i];
-            ++i;
-            ++k;
+        while (left_i < leftLen) {
+            merged[merged_i] = presortedLeft[left_i];
+            ++left_i;
+            ++merged_i;
         }
-        while (j < rightlen) {
-            merged[k] = presortedRight[j];
-            ++j;
-            ++k;
+        while (right_i < rightlen) {
+            merged[merged_i] = presortedRight[right_i];
+            ++right_i;
+            ++merged_i;
         }
         return merged;
     }
